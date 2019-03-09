@@ -65,7 +65,7 @@ class HttpKernel implements HttpKernelInterface
                 throw $throwable;
             }
 
-            $response = ($this->errorResponseFactory)($throwable);
+            $response = ($this->errorResponseFactory)($throwable, $request);
         }
 
         $this->responseEmitter->emit($response);
